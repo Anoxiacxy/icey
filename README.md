@@ -23,9 +23,8 @@ icey 是一款轻量级的开源 OI 本地评测系统。由 [Anoxiacxy](https:/
 懒人命令如下
 
 ``` bash
-git clone https://github.com/Edgration/icey.git
-cd icey
-sudo cp icey /usr/bin/
+git clone https://github.com/Anoxiacxy/icey.git
+sudo cp icey/icey /usr/bin/
 ```
 
 对于没有安装 `git` 的童鞋，可以使用以下命令安装
@@ -47,7 +46,7 @@ sudo rm /usr/bin/icey
 
 #### 本地评测
 
-```
+```bash
 icey [OPTION]... DATA... CODE...
 ```
 
