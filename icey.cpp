@@ -12,7 +12,7 @@ using namespace std;
 
 namespace constant {
 	double TIME = 1;
-	string VERSION = "1.0.0";
+	string VERSION = "1.1.0";
 	string IN_SUFFIX = ".in";
 	string OUT_SUFFIX = ".out";
 	//string PREFIX = "";
@@ -128,8 +128,6 @@ namespace tool {
 	}
 } using namespace tool;
 
-
- 
 /*
 Usage: icey [OPTION]... DATA... CODE...
 Judge the code with data and illustrate the results with a chart
@@ -165,7 +163,9 @@ namespace option {
 	void version_print() {
 		cout << "icey (LocalJudge) " << VERSION << endl;
 		cout << "Copyright (C) 2018 " << endl;
-		cout << "Code by Anoxiacxy. <https://anoxiacxy.github.io>" << endl;
+		cout << "Code by" << endl; 
+		cout << "        Anoxiacxy <https://anoxiacxy.github.io>" << endl;
+		cout << "        Edgration <https://edgration.com>" << endl;
 	}
 
 	bool time_check(string str) { return start_with(str, "-t") || start_with(str, "--time"); }
@@ -181,7 +181,7 @@ namespace option {
 	}
 	bool complie_check(string str) { return start_with(str, "-c") || start_with(str, "-C"); }
 	void complie_set(string str) {
-		if (str.length() < 2) {
+		if (str.length() <= 2) {
 			if (start_with(str, "-c")) { argument_missing_print("-c"); exit(-1); }
 			if (start_with(str, "-C")) { argument_missing_print("-C"); exit(-1); }
 			error_print(str); exit(0);
@@ -290,8 +290,6 @@ namespace check {
 			return rst;
 		}
 		
-
-		
 		ifstream fin;
 		fin.open(data_dir + "/" + ERR);
 		if (fin >> temp) {//RE
@@ -322,7 +320,7 @@ namespace check {
 	void work(string data_dir, string code_dir) {
 		if (access(data_dir.c_str(), 0) == -1) access_fail(data_dir), exit(-1);
 		if (access(code_dir.c_str(), 0) == -1) access_fail(code_dir), exit(-1);	
-				
+
 		vector<string>data_list = get_list(data_dir);
 		
 		clean(data_dir);
