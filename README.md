@@ -10,7 +10,7 @@ icey [OPTION]... DATA... CODE...
 ****
 ### 什么是 icey ?
 
-icey 是一款轻量级的开源 OI 本地评测系统。由 [Anoxiacxy](https://anoxiacxy.github.io) 和 [Edgration](www.)
+icey 是一款轻量级的开源 OI 本地评测系统。由 [Anoxiacxy](https://anoxiacxy.github.io) 和 [Edgration](http://edgration.com/)
 
 你可以用简短的几句命令，对您的程序进行快速，精确地评测，并得到一份关于评测的报告。
 
