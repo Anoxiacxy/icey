@@ -225,7 +225,7 @@ namespace check {
 			
 			name = show_center(name, 12);
 			string time_s(tmp), score_s; 
-			if (score == int(score))
+			if (fabs(score - int(score)) < 0.01)
 				score_s = show_center(to_string(int(score)), 5);
 			else {
 				sprintf(tmp, "%.1f", score);
@@ -244,6 +244,14 @@ namespace check {
 	};
 
 	struct Result test(string data_dir, pair<string, string>data_test) {
+	
+		ostringstream cmd;
+		cmd << "cd " << data_dir << endl;
+		cmd << "rm " << OUT << " 2> " << ERR << endl;
+		cmd << "rm " << ERR << endl;
+		system(cmd.str().c_str());
+		cmd.str("");
+			
 		Result rst;
 		if (access((data_dir + "/" + EXE).c_str(), 0) == -1) {//CE
 			rst.type = CE;
@@ -302,7 +310,7 @@ namespace check {
 		}
 		fin.close();
 		
-		ostringstream cmd;
+		//ostringstream cmd;
 		cmd << "cd " << data_dir << endl;
 		cmd << "diff -b -q " << data_test.second << " " << OUT << " > " << ERR << endl;	
 		system(cmd.str().c_str());
