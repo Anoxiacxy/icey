@@ -1,6 +1,6 @@
-#  Icey Local Judge
+##  Icey Local Judge
 
-轻量化的本地测评系统
+
 
 ------
 
